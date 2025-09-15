@@ -66,6 +66,21 @@ Claudie AI Workspace adalah aplikasi web modular yang menggabungkan berbagai mod
 - **Nginx**: Web server dan reverse proxy
 - **Ubuntu**: Sistem operasi yang direkomendasikan
 
+## 🌐 **PUBLIC ACCESS**
+
+**🚀 Aplikasi sudah ONLINE dan dapat diakses secara PUBLIC!**
+
+### 📍 **Public URLs:**
+- **Main Website**: http://34.121.6.206 
+- **API Documentation**: http://34.121.6.206/docs
+- **Backend API**: http://34.121.6.206/api/
+- **Health Check**: http://34.121.6.206/health
+
+### 🔧 **Local Development Access:**
+- **Frontend**: http://localhost:3000 (direct React)
+- **Backend**: http://localhost:8001/api/ (direct FastAPI)
+- **Via Nginx**: http://localhost:80 (production setup)
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -73,6 +88,7 @@ Claudie AI Workspace adalah aplikasi web modular yang menggabungkan berbagai mod
 - Python 3.11+
 - MongoDB 7.0+
 - Yarn package manager
+- Nginx (untuk public access)
 
 ### Installation
 
@@ -110,24 +126,22 @@ Frontend (.env):
 REACT_APP_BACKEND_URL="http://localhost:8001"
 ```
 
-5. **Start Services**
+5. **Start Services dengan Supervisor**
 ```bash
-# Start MongoDB
-sudo systemctl start mongod
+# All services managed by supervisor
+sudo supervisorctl status
 
-# Start Backend (Terminal 1)
-cd backend
-uvicorn server:app --host 0.0.0.0 --port 8001 --reload
-
-# Start Frontend (Terminal 2)
-cd frontend
-yarn start
+# Start individual services
+sudo supervisorctl start backend
+sudo supervisorctl start frontend
+sudo supervisorctl start mongodb
+sudo supervisorctl start nginx
 ```
 
 6. **Access Application**
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:8001
-- API Documentation: http://localhost:8001/docs
+- **Public Access**: http://34.121.6.206
+- **Local Development**: http://localhost:3000
+- **API Documentation**: http://34.121.6.206/docs
 
 ## 📚 API Documentation
 
