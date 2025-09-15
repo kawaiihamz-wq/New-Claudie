@@ -1,0 +1,5 @@
+2025-09-14 17:53:36 - Memulai proses backup otomatis di: /c/Users/admin/Documents/GitHub/Claudie-sys
+2025-09-14 17:53:36 - Membersihkan backup lama (>7 hari)
+2025-09-14 17:53:36 - File/folder yang akan di-backup:
+[0;34mINFO: Membuat 1 zip file berisi semua file dan folder...[0m
+[0;31mERROR: Gagal membuat backup zip[0m

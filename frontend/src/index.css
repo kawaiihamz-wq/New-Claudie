@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Code highlighting custom styles */
+.code-block {
+  @apply bg-gray-900 rounded-lg p-4 text-sm;
+}
+
+.code-block pre {
+  @apply m-0 overflow-x-auto;
+}
+
+/* Message bubbles */
+.message-user {
+  @apply bg-primary-500 text-white ml-12 rounded-2xl rounded-br-md;
+}
+
+.message-assistant {
+  @apply bg-white border border-gray-200 mr-12 rounded-2xl rounded-bl-md;
+}
+
+/* Model badges */
+.model-badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.model-gpt {
+  @apply bg-green-100 text-green-800;
+}
+
+.model-claude {
+  @apply bg-purple-100 text-purple-800;
+}
+
+.model-gemini {
+  @apply bg-blue-100 text-blue-800;
+}
