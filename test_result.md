@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "tolong tambahkan fitur ini : Workspace modular seperti kanvas: satu panel untuk chat, satu lagi untuk output (gambar, kode, video). Tambah "quick-switch" antar model di pojok kanan atas (badge warna berbeda buat tiap model). buat responsif serta modern, dan tambahkan fitur image genrate & video generate serta buatkan install.md step by step run code ini via VPS ubuntu, tambahkan juga system login & register"
+user_problem_statement: "tolong benarkan bagian register dikarenakan tidak berfungsi dengan baik serta error dibagian requirements.txt:21:emergentintegrations==0.1.0 dan updatekan readme.md saya butuh cepat tolong diperbaiki"
 
 backend:
   - task: "Authentication System (JWT + User Registration/Login)"
