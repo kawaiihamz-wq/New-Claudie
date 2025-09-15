@@ -236,6 +236,47 @@ claudie-ai-workspace/
 - **Input Validation**: Validasi input di frontend dan backend
 - **Protected Routes**: Route protection dengan authentication
 
+## 🌐 **Nginx Reverse Proxy Configuration**
+
+### 🔧 **Architecture:**
+```
+Internet → Nginx (Port 80) → Frontend (Port 3000)
+                           → Backend API (Port 8001)
+                           → MongoDB (Port 27017)
+```
+
+### ⚙️ **Nginx Features:**
+- **Reverse Proxy**: Mengarahkan traffic ke aplikasi yang tepat
+- **Static File Caching**: Cache untuk file JS, CSS, images (1 tahun)
+- **Gzip Compression**: Kompresi otomatis untuk performa
+- **Security Headers**: X-Content-Type-Options, X-Frame-Options, X-XSS-Protection
+- **Health Check**: Endpoint `/health` untuk monitoring
+- **API Routing**: Semua request `/api/*` diarahkan ke backend
+- **SPA Support**: Fallback routing untuk React Router
+
+### 🛡️ **Security Configuration:**
+```nginx
+# Security headers otomatis ditambahkan
+add_header X-Content-Type-Options nosniff;
+add_header X-Frame-Options DENY;
+add_header X-XSS-Protection "1; mode=block";
+```
+
+### 📊 **Supervisor Management:**
+```bash
+# Check status semua services
+sudo supervisorctl status
+
+# Restart individual service
+sudo supervisorctl restart nginx
+sudo supervisorctl restart backend
+sudo supervisorctl restart frontend
+
+# View logs
+sudo supervisorctl tail nginx
+sudo supervisorctl tail backend stderr
+```
+
 ## 🌐 Model AI Support
 
 ### Supported Models
