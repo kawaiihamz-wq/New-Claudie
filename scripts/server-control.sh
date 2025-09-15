@@ -32,6 +32,7 @@ case "$1" in
         echo "🌐 Public Access:"
         echo "Main Website: http://34.121.6.206"
         echo "API Docs: http://34.121.6.206/docs"
+        echo "Preview URL: Check your Emergent preview panel"
         echo ""
         echo "🔍 Port Status:"
         netstat -tlnp | grep -E "(80|3000|8001|27017)" | head -10
